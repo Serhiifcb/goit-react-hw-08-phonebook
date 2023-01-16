@@ -26,6 +26,9 @@ export const register = createAsyncThunk(
       setAuthHeader(res.data.token);
       return res.data;
     } catch (error) {
+      alert(
+        'Щось пішло не так, можливо користувач з таким іменем чи електронною поштою уже існують. Виправте та спробуйте ще раз'
+      );
       return console.log(thunkAPI.rejectWithValue(error.message));
     }
   }
@@ -44,6 +47,9 @@ export const logIn = createAsyncThunk(
       setAuthHeader(res.data.token);
       return res.data;
     } catch (error) {
+      alert(
+        'Щось пішло не так, такого користувача не зареєстровано. Виправте та спробуйте ще раз'
+      );
       return thunkAPI.rejectWithValue(error.message);
     }
   }

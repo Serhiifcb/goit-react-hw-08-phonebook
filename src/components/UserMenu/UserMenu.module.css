@@ -5,10 +5,12 @@
 }
 
 .username {
+  color: rgb(116, 187, 201);
   font-weight: 700;
 }
 
 .logOutButton {
+  color: white;
   font-size: 14px;
     font-weight: 500;
     border: 1px solid black;
@@ -16,12 +18,11 @@
     padding: 4px 10px;
     border: none;
     background-color: rgb(116, 187, 201);
-    box-shadow: 3px 3px 3px rgb(116, 116, 160);
+    /* box-shadow: 3px 3px 3px rgb(116, 116, 160); */
 }
 
 .logOutButton:hover {
   background-color: rgb(109, 109, 172);
-    color: white;
     cursor: pointer;
     box-shadow: 3px 3px 3px rgb(116, 116, 160);
 }
