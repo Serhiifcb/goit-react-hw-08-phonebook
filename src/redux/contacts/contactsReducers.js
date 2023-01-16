@@ -29,6 +29,7 @@ export const contactsSlice = createSlice({
         item => item.id === action.payload.id
       );
       state.items.splice(index, 1);
+      alert('Контакт видалено');
     },
     [deleteContact.pending]: handlePending,
     [deleteContact.rejected]: handleRejected,
@@ -36,6 +37,7 @@ export const contactsSlice = createSlice({
       state.isLoading = false;
       state.error = null;
       state.items.push(action.payload);
+      alert('Контакт додано');
     },
     [addContact.rejected]: handleRejected,
     [addContact.pending]: handlePending,

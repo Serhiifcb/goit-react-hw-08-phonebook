@@ -17,17 +17,20 @@ export const Contacts = () => {
   }
   
   return (
-    <div className={css.contactListBlock}>
-      <ul>
-        {visibleContacts.length > 0 ? (visibleContacts.map(({ id, name, number }) => (
-        <li className={css.contactItem} key={id}>
-          <span className={css.spanContact}></span>
-            {name}: {number}
-          <button className={css.buttonDeleteContact} onClick={() => deleteItem(id)}>Видалити</button>
-        </li>
-          
-        ))) : <p>There are no contacts</p>}
-      </ul>
-    </div>
+    <>
+      <h2>Contacts</h2>
+      <div className={css.contactListBlock}>
+        <ul>
+          {visibleContacts.length > 0 ? (visibleContacts.map(({ id, name, number }) => (
+          <li className={css.contactItem} key={id}>
+            <span className={css.spanContact}></span>
+              {name}: {number}
+            <button className={css.buttonDeleteContact} onClick={() => deleteItem(id)}>Видалити</button>
+          </li>
+            
+          ))) : <p>There are no contacts</p>}
+        </ul>
+      </div>
+    </>
   )
 }

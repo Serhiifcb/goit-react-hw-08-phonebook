@@ -25,7 +25,8 @@ export const Form = () => {
   };
 
   return (
-      <div className={css.phonebookBlock}>
+    // <div className={css.phonebookBlock}>
+    <>
         <form onSubmit={handleSubmit} className={css.formBlock}>  
           <label>
             Name
@@ -54,6 +55,6 @@ export const Form = () => {
           <br />
           <button type="submit" className={css.addContactButton}>Add contact</button>
         </form>
-      </div>
+    </>
     )
 }
