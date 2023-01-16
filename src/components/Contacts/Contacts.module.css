@@ -1,6 +1,6 @@
 .contactListBlock {
   margin-left: 20px;
-  display: block;
+  display: inline-block;
   max-width: 400px;
   padding: 10px 20px 10px 20px;
   border-radius: 5px;
@@ -32,12 +32,12 @@
   padding: 3px 7px;
   border: none;
   background-color: rgb(116, 187, 201);
+  color: white;
   box-shadow: 3px 3px 3px rgb(116, 116, 160);
 }
 
 .buttonDeleteContact:hover {
   background-color: rgb(109, 109, 172);
-  color: white;
   cursor: pointer;
   box-shadow: 3px 3px 3px rgb(116, 116, 160);
 }

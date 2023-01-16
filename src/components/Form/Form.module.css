@@ -27,6 +27,7 @@
 }
 
 .addContactButton {
+  color: white;
   font-size: 14px;
   font-weight: 500;
   margin-top: 10px;
@@ -40,7 +41,6 @@
 
 .addContactButton:hover {
   background-color: rgb(109, 109, 172);
-  color: white;
   cursor: pointer;
   box-shadow: 3px 3px 3px rgb(116, 116, 160);
 }
