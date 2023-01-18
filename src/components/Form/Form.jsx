@@ -2,6 +2,7 @@ import React from "react";
 import css from "./Form.module.css"
 import { useSelector, useDispatch } from "react-redux";
 import { contactsOperations, contactsSelectors } from 'redux/contacts';
+import { toast } from "react-toastify";
 
 export const Form = () => {
   const dispatch = useDispatch();
@@ -10,11 +11,21 @@ export const Form = () => {
     event.preventDefault();
     const form = event.currentTarget;
     if (contacts.some(element => (element.name.toLowerCase() === form.elements.name.value.toLowerCase()))) {
-      alert(`User ${form.elements.name.value} is already in contacts`);
+      toast.error(
+        `User ${form.elements.name.value} is already in contacts`,
+        {
+          position: toast.POSITION.TOP_CENTER,
+        }
+      );
       return;
     }
     if (contacts.some(element => (element.number.toLowerCase() === form.elements.number.value.toLowerCase()))) {
-      alert(`Number ${form.elements.number.value} is already in contacts`);
+      toast.error(
+        `Number ${form.elements.number.value} is already in contacts`,
+        {
+          position: toast.POSITION.TOP_CENTER,
+        }
+      );
       return;
     }
     dispatch(contactsOperations.addContact({
@@ -25,7 +36,6 @@ export const Form = () => {
   };
 
   return (
-    // <div className={css.phonebookBlock}>
     <>
         <form onSubmit={handleSubmit} className={css.formBlock}>  
           <label>

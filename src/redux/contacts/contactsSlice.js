@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchContacts, deleteContact, addContact } from './contactsOperations';
+import { toast } from 'react-toastify';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -29,7 +30,9 @@ export const contactsSlice = createSlice({
         item => item.id === action.payload.id
       );
       state.items.splice(index, 1);
-      alert('Контакт видалено');
+      toast.success('Great! You have deleted the contact!', {
+        position: toast.POSITION.TOP_CENTER,
+      });
     },
     [deleteContact.pending]: handlePending,
     [deleteContact.rejected]: handleRejected,
@@ -37,7 +40,9 @@ export const contactsSlice = createSlice({
       state.isLoading = false;
       state.error = null;
       state.items.push(action.payload);
-      alert('Контакт додано');
+      toast.success('Great! You have added the contact!', {
+        position: toast.POSITION.TOP_CENTER,
+      });
     },
     [addContact.rejected]: handleRejected,
     [addContact.pending]: handlePending,

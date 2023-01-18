@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
@@ -24,10 +25,16 @@ export const register = createAsyncThunk(
       const res = await axios.post('/users/signup', credentials);
       // After successful registration, add the token to the HTTP header
       setAuthHeader(res.data.token);
+      toast.success('You are registered! Welcome!', {
+        position: toast.POSITION.TOP_CENTER,
+      });
       return res.data;
     } catch (error) {
-      alert(
-        'Щось пішло не так, можливо користувач з таким іменем чи електронною поштою уже існують. Виправте та спробуйте ще раз'
+      toast.error(
+        'Something is wrong. Maybe user with this name or email is registered. Please check and try again',
+        {
+          position: toast.POSITION.TOP_CENTER,
+        }
       );
       return console.log(thunkAPI.rejectWithValue(error.message));
     }
@@ -45,10 +52,16 @@ export const logIn = createAsyncThunk(
       const res = await axios.post('/users/login', credentials);
       // After successful login, add the token to the HTTP header
       setAuthHeader(res.data.token);
+      toast.info(`You are log in! Welcome ${res.data.user.name}!`, {
+        position: toast.POSITION.TOP_CENTER,
+      });
       return res.data;
     } catch (error) {
-      alert(
-        'Щось пішло не так, такого користувача не зареєстровано. Виправте та спробуйте ще раз'
+      toast.error(
+        'Something is wrong. Maybe this user is not registered. Please check and try again',
+        {
+          position: toast.POSITION.TOP_CENTER,
+        }
       );
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -64,6 +77,9 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     await axios.post('/users/logout');
     // After a successful logout, remove the token from the HTTP header
     clearAuthHeader();
+    toast.info('You are log out! See you soon!', {
+      position: toast.POSITION.TOP_CENTER,
+    });
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
   }
