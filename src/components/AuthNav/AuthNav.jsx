@@ -1,12 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
+import css from "./AuthNav.module.css"
 
 export const AuthNav = () => {
   const navigate = useNavigate();
   return (
-    <div>
-      <Button color="inherit" onClick={() => {navigate("/register")}}>Register</Button>
-      <Button color="inherit" onClick={() => {navigate("/login")}}>Log In</Button>
+    <div className={css.authNav}>
+      <Button color="inherit" onClick={() => {navigate("/register")}} className={css.authButton}>Register</Button>
+      <Button color="inherit" onClick={() => {navigate("/login")}} className={css.authButton}>Log In</Button>
     </div>
   );
 };

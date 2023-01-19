@@ -6,8 +6,8 @@ export const UserMenu = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <>
       <Button type="button" onClick={() => dispatch(logOut())} color='inherit'>Logout</Button>
-    </div>
+    </>
   );
 };
