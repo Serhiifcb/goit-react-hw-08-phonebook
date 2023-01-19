@@ -134,10 +134,8 @@ function ResponsiveAppBar() {
             )}
           </Box>
 
-          <Box sx={{}} className={css.userAppAuth}>
-          {/* <div> */}
+          <Box className={css.userAppAuth}>
             {isLoggedIn ? <UserMenu /> : <AuthNav />}
-          {/* </div> */}
           </Box>
         </Toolbar>
       </Container>
