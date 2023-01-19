@@ -40,8 +40,8 @@ export const Contacts = () => {
                   {name}: {number}
                 </ListItem>
               ))) : <p>There are no contacts</p>}
-            </List>
-        </div>
+        </List>
+      </div>
     </>
   )
 }

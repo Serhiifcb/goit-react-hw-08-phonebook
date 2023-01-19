@@ -22,9 +22,9 @@ export const LoginForm = () => {
   return (
     <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
       <Typography variant="h5" gutterBottom={true} className={css.loginTitle}>Login</Typography>
-      <TextField id="outlined-basic" label="Email" variant="outlined" size="small" type="email" name="email" className={css.loginInput}/>
+      <TextField label="Email" variant="outlined" size="small" type="email" name="email" className={css.loginInput}/>
       <br />
-      <TextField id="outlined-basic" label="Password" variant="outlined" size="small" type="password" name="password" className={css.loginInput}/>
+      <TextField label="Password" variant="outlined" size="small" type="password" name="password" className={css.loginInput}/>
       <br />
       <Button size='small' type="submit" variant='contained' className={css.loginButton}>Log In</Button>
     </form>
