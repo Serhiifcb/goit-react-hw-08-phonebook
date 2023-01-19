@@ -1,7 +1,7 @@
-import css from "./Filter.module.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { update } from 'redux/filterSlice';
 import { contactsSelectors } from 'redux/contacts';
+import { TextField } from "@mui/material";
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -10,10 +10,9 @@ export const Filter = () => {
     dispatch(update(event.currentTarget.value));
   }
   return (
-    <div className={css.filterBlock}>
+    <div>
       <label>
-        Find contacts by name <br />
-        <input type="text" value={filter} className={css.inputFilter} onChange={changeFilter} />
+        <TextField id="outlined-basic"  margin="normal" label="Find contacts by name" variant="outlined" size="small" type="text" value={filter} onChange={changeFilter}/>
       </label>
     </div>
   )

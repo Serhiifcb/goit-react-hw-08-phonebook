@@ -1,11 +1,22 @@
 import { Contacts } from "components/Contacts/Contacts";
 import { Filter } from "components/Filter/Filter";
 import { Form } from "components/Form/Form";
+import { Typography } from "@mui/material";
 
-export default function Login() {
+const styles = {
+  container: {
+    minHeight: 'calc(100vh - 50px)',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  }
+};
+
+export default function ContactsPage() {
   return (
-    <div>
-      <Form/>
+    <div style={styles.container}>
+      <Form />
+      <Typography variant="h5" gutterBottom={true}>Contacts</Typography>
       <Filter/>
       <Contacts />
     </div>
