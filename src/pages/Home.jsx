@@ -11,16 +11,17 @@ const styles = {
     justifyContent: 'center',
   },
   title: {
+    margin: 0,
     fontWeight: 500,
     fontSize: 48,
     textAlign: 'center',
-    color: 'rgb(116, 187, 201)',
+    color: 'rgb(64 116 216)',
   },
   notice: {
     fontSize: 20,
     fontWeight: 500,
     textAlign: 'center',
-    color: 'rgb(116, 187, 201)',
+    color: 'rgb(64 116 216)',
   }
 };
 
