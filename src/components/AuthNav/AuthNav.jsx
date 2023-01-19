@@ -7,7 +7,7 @@ export const AuthNav = () => {
   return (
     <div className={css.authNav}>
       <Button color="inherit" onClick={() => {navigate("/register")}} className={css.authButton}>Register</Button>
-      <Button color="inherit" onClick={() => {navigate("/login")}} className={css.authButton}>Log In</Button>
+      <Button color="inherit" onClick={() => {navigate("/login")}} className={css.authButton}>Log in</Button>
     </div>
   );
 };
