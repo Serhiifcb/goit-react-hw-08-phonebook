@@ -5,7 +5,7 @@ import ResponsiveAppBar from './AppBarResponsive/AppBarResponsive';
 
 export const Layout = () => {
   return (
-    <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
+    <div style={{ maxWidth: 960, margin: '0 auto', padding: '0' }}>
       <ResponsiveAppBar/>
       <Suspense fallback={null}>
         <Outlet />
